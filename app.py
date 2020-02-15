@@ -30,16 +30,16 @@ def gen(camera):
     """Video streaming generator function."""
     global user_count
     user_count += 1
-    t = time.time()
+    # t = time.time()
     try:
         while True:
             frame = camera.get_frame()
             yield (b"--frame\r\n" b"Content-Type: image/jpeg\r\n\r\n" + frame + b"\r\n")
 
             temp = time.time()
-            fps = 1 / (temp - t)
-            print("FPS: {:.2f}, number of users: {}".format(fps, user_count))
-            t = temp
+            # fps = 1 / (temp - t)
+            # print("FPS: {:.2f}, number of users: {}".format(fps, user_count))
+            # t = temp
     except GeneratorExit:
         user_count -= 1
 
