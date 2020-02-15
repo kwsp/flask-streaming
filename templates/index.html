@@ -8,17 +8,22 @@ body, html {
   padding: 0;
   background-color: black;
 }
-#stream-window {
+#stream-div {
   /* Center and scale the image nicely */
+  text-align: center;
+  display: block;
   padding: 0;
   height: 100%;
   max-height: 100%;
-  display: inline-block;
-
+}
+#stream-window {
+  height: 100%;
 }
 </style>
   </head>
   <body>
-    <img id="stream-window" src="{{ url_for('video_feed') }}">
+      <div id="stream-div">
+        <img id="stream-window" src="{{ url_for('video_feed') }}">
+      </div>
   </body>
 </html>
